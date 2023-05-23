@@ -96,4 +96,8 @@ header .nav-header a i:hover {
 .logo img {
   width: 50px;
 }
+
+nav a.router-link-exact-active {
+  color: #a71427;
+}
 </style>

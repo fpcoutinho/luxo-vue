@@ -24,6 +24,11 @@ export default {
 </script>
 
 <style>
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
 footer {
   display: flex;
   align-items: center;
