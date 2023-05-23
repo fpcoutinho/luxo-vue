@@ -1,0 +1,99 @@
+<template>
+  <header>
+    <div class="img-header">
+      <router-link to="/">
+        <img src="../assets/logo.png" alt="Logo" width="228.172px" />
+      </router-link>
+    </div>
+
+    <nav class="nav-header">
+      <router-link to="#"
+        ><i class="material-symbols-outlined"> shopping_cart </i></router-link
+      >
+
+      <router-link to="#"
+        ><i class="material-symbols-outlined"> person </i></router-link
+      >
+
+      <router-link to="#"
+        ><i class="material-symbols-outlined"> favorite </i></router-link
+      >
+
+      <router-link to="about"
+        ><i class="material-symbols-outlined"> info </i></router-link
+      >
+
+      <router-link to="#"
+        ><i class="material-symbols-outlined"> help </i></router-link
+      >
+    </nav>
+  </header>
+</template>
+
+<script>
+export default {
+  name: 'Header',
+  data() {
+    return {}
+  },
+  methods: {},
+}
+</script>
+
+<style>
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999px;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  box-shadow: 0px 6px 16px 0px rgb(0 0 0 / 40%);
+  height: 50px;
+  background-color: crimson;
+  padding: 10px 0px;
+}
+
+header .img-header img {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+}
+
+header .nav-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 20px;
+  padding: 0px;
+}
+
+header .nav-header a {
+  color: #000;
+  text-decoration: none;
+  font-size: small;
+  padding: 0px 10px;
+}
+
+header .nav-header a i {
+  height: 20px;
+  width: auto;
+  opacity: 0.8;
+  color: #fff;
+}
+
+header .nav-header a i:hover {
+  transform: scale(1.2);
+  transition: 0.6s ease-in;
+  opacity: 0.8;
+}
+
+.logo img {
+  width: 50px;
+}
+</style>

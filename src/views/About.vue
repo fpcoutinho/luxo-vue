@@ -1,18 +1,20 @@
 <template>
-  <header id="sobre-header">
-    <a href="/home"
-      ><img src="../assets/logo.png" alt="Logo da Luxo Cosmeticos" width="300"
-    /></a>
-    <!-- <h1>Luxo Cosméticos</h1> -->
-    <nav>
-      <ul class="lista-horizontal">
-        <li class="item-horizontal"><a href="#sobre">História</a></li>
-        <li class="item-horizontal"><a href="#produtos">Produtos</a></li>
-        <li class="item-horizontal"><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
   <main>
+    <div id="sobre-header">
+      <a href="/home"
+        ><img
+          src="../assets/logo.png"
+          alt="Logo da Luxo Cosmeticos"
+          width="300"
+      /></a>
+      <nav>
+        <ul class="lista-horizontal">
+          <li class="item-horizontal"><a href="#sobre">História</a></li>
+          <li class="item-horizontal"><a href="#produtos">Produtos</a></li>
+          <li class="item-horizontal"><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
     <section id="sobre">
       <h2>Nossa história</h2>
       <p>
@@ -119,10 +121,6 @@
       </ul>
     </section>
   </main>
-  <footer>
-    <img src="../assets/logo.png" alt="Logo da Luxo Cosmeticos" width="100px" />
-    © 2023 Luxo Cosméticos - Todos os direitos reservados.
-  </footer>
 </template>
 
 <style scoped>
