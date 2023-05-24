@@ -3,7 +3,10 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Login from '../views/auth/Login.vue'
 import Signup from '../views/auth/Signup.vue'
+import Favorites from '../views/Favorites.vue'
+import Help from '../views/Help.vue'
 import NotFound from '../views/NotFound.vue'
+import Produto from '../views/Produto.vue'
 import CriaProduto from '../views/admin/CriaProduto.vue'
 
 const routes = [
@@ -18,6 +21,16 @@ const routes = [
     component: About,
   },
   {
+    path: '/favorites',
+    name: 'favorites',
+    component: Favorites,
+  },
+  {
+    path: '/help',
+    name: 'help',
+    component: Help,
+  },
+  {
     path: '/login',
     name: 'login',
     component: Login,
@@ -26,6 +39,11 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: Signup,
+  },
+  {
+    path: '/produto/:id',
+    name: 'produto',
+    component: Produto,
   },
   {
     path: '/admin/cria/produto',

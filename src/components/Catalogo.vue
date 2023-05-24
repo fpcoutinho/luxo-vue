@@ -8,7 +8,7 @@
       >
         <div
           v-for="product in products"
-          :key="product.id"
+          :key="product._id"
           class="group relative"
         >
           <div
@@ -16,17 +16,19 @@
           >
             <img
               :src="product.imagem"
-              :alt="product.imageAlt"
+              :alt="product.nome"
               class="h-full w-full object-cover object-center lg:h-full lg:w-full"
             />
           </div>
           <div class="mt-4 flex justify-between">
             <div>
               <h3 class="text-sm text-gray-700">
-                <a :href="product.href">
+                <router-link
+                  :to="{ name: 'produto', params: { id: product._id } }"
+                >
                   <span aria-hidden="true" class="absolute inset-0" />
                   {{ product.nome }}
-                </a>
+                </router-link>
               </h3>
               <p class="mt-1 text-sm text-gray-500">{{ product.marca }}</p>
             </div>
@@ -47,9 +49,10 @@ import axios from 'axios'
 const products = ref([])
 const error = ref(null)
 
-const load = async () => {
+const load = async (categoria) => {
+  const url = '/produtos/categoria/' + categoria
   try {
-    let data = await axios.get('/produtos')
+    let data = await axios.get(url)
     if (!data.status === 200) {
       throw new Error('Erro ao carregar os dados')
     }
@@ -59,5 +62,5 @@ const load = async () => {
   }
 }
 
-load()
+load('Perfume')
 </script>

@@ -19,14 +19,14 @@
         </HomeIcon
       ></router-link>
 
-      <router-link to="about" title="Favoritos"
+      <router-link to="favorites" title="Favoritos"
         ><HeartIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
         </HeartIcon
       ></router-link>
 
-      <router-link to="/login" title="Log in"
+      <router-link to="login" title="Log in"
         ><UserIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
@@ -40,7 +40,7 @@
         </InformationCircleIcon
       ></router-link>
 
-      <router-link to="about" title="Ajuda"
+      <router-link to="help" title="Ajuda"
         ><QuestionMarkCircleIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
