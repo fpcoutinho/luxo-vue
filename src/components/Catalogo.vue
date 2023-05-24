@@ -15,7 +15,7 @@
             class="aspect-h-1 aspect-w-1 w-full rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
           >
             <img
-              :src="product.imageSrc"
+              :src="product.imagem"
               :alt="product.imageAlt"
               class="h-full w-full object-cover object-center lg:h-full lg:w-full"
             />
@@ -25,12 +25,14 @@
               <h3 class="text-sm text-gray-700">
                 <a :href="product.href">
                   <span aria-hidden="true" class="absolute inset-0" />
-                  {{ product.name }}
+                  {{ product.nome }}
                 </a>
               </h3>
-              <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+              <p class="mt-1 text-sm text-gray-500">{{ product.marca }}</p>
             </div>
-            <p class="text-sm font-medium text-gray-900">{{ product.price }}</p>
+            <p class="text-sm font-medium text-gray-900">
+              R$ {{ product.preco }}
+            </p>
           </div>
         </div>
       </div>
@@ -39,46 +41,23 @@
 </template>
 
 <script setup>
-const products = [
-  {
-    id: 1,
-    name: 'Earthen Bottle',
-    href: '#',
-    price: '$48',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
-    imageAlt:
-      'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-  },
-  {
-    id: 2,
-    name: 'Nomad Tumbler',
-    href: '#',
-    price: '$35',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
-    imageAlt:
-      'Olive drab green insulated bottle with flared screw lid and flat top.',
-  },
-  {
-    id: 3,
-    name: 'Focus Paper Refill',
-    href: '#',
-    price: '$89',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
-    imageAlt:
-      'Person using a pen to cross a task off a productivity paper card.',
-  },
-  {
-    id: 4,
-    name: 'Machined Mechanical Pencil',
-    href: '#',
-    price: '$35',
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
-    imageAlt:
-      'Hand holding black machined steel mechanical pencil with brass tip and top.',
-  },
-]
+import { ref } from 'vue'
+import axios from 'axios'
+
+const products = ref([])
+const error = ref(null)
+
+const load = async () => {
+  try {
+    let data = await axios.get('/produtos')
+    if (!data.status === 200) {
+      throw new Error('Erro ao carregar os dados')
+    }
+    products.value = data.data
+  } catch (err) {
+    error.value = err.message
+  }
+}
+
+load()
 </script>

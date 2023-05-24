@@ -2,17 +2,17 @@
   <main>
     <form @submit="login">
       <h2>Login</h2>
-      <form-group>
+      <div class="form-group">
         <label for="email">Email</label>
         <input type="text" name="email" />
         <div class="email error"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="password">Password</label>
         <input type="password" name="password" />
         <div class="password error"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <button
           class="bg-primary-500 text-primary-100 hover:bg-primary-400"
           type="submit"
@@ -23,7 +23,7 @@
           Não tem uma conta?
           <router-link to="/signup">Cadastre-se</router-link>
         </p>
-      </form-group>
+      </div>
     </form>
   </main>
 </template>

@@ -4,7 +4,7 @@
       <form-header>
         <h2>Cadastro de Produto</h2>
       </form-header>
-      <form-group>
+      <div class="form-group">
         <label for="nome">Nome</label>
         <input
           type="text"
@@ -14,8 +14,8 @@
           required
         />
         <div class="error nome" id="erroNome"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="marca">Marca</label>
         <input
           type="text"
@@ -25,8 +25,8 @@
           required
         />
         <div class="error marca" id="erroMarca"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="volume">Volume</label>
         <input
           type="number"
@@ -36,8 +36,8 @@
           required
         />
         <div class="error volume" id="erroVolume"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="preco">Preço</label>
         <input
           type="number"
@@ -47,8 +47,8 @@
           required
         />
         <div class="error preco" id="erroPreco"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="categoria">Categoria</label>
         <select name="categoria" id="categoria" required>
           <option value="Perfume">Perfume</option>
@@ -57,8 +57,8 @@
           <option value="Maquiagem">Maquiagem</option>
         </select>
         <div class="error categoria" id="erroCategoria"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="genero">Genero</label>
         <select name="genero" id="genero" required>
           <option value="Masculino">Masculino</option>
@@ -66,13 +66,13 @@
           <option value="Unissex">Unissex</option>
         </select>
         <div class="error genero" id="erroGenero"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="imagem">Imagem</label>
         <input type="text" name="imagem" id="imagem" required />
         <div class="error imagem" id="erroImagem"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="descricao">Descrição</label>
         <textarea
           name="descricao"
@@ -83,10 +83,10 @@
           required
         ></textarea>
         <div class="error descricao" id="erroDescricao"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <button type="submit">Criar</button>
-      </form-group>
+      </div>
     </form>
   </main>
 </template>

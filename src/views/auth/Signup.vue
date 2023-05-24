@@ -1,33 +1,33 @@
 <template>
   <main>
     <form @submit="signup">
-      <form-header>
+      <div class="form-header">
         <h2>Cadastrar</h2>
-      </form-header>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="name">Nome</label>
         <input type="text" id="name" name="name" required />
         <div class="name error"></div>
         <label for="surname">Sobrenome</label>
         <input type="text" id="surname" name="surname" required />
         <div class="surname error"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required />
         <div class="email error"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" id="dataNascimento" name="dataNascimento" required />
         <div class="dataNascimento error"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="password">Senha</label>
         <input type="password" id="password" name="password" required />
         <div class="password error"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <label for="confirmPassword">Confirmar Senha</label>
         <input
           type="password"
@@ -36,15 +36,15 @@
           required
         />
         <div class="confirmPassword error"></div>
-      </form-group>
-      <form-group>
+      </div>
+      <div class="form-group">
         <button
           class="bg-primary-500 text-primary-100 hover:bg-primary-400"
           type="submit"
         >
           Sign Up
         </button>
-      </form-group>
+      </div>
     </form>
   </main>
 </template>
