@@ -12,7 +12,7 @@
       </router-link>
     </div>
     <nav class="nav-header flex-3 h-full flex items-center gap-4 p-0">
-      <router-link to="#"
+      <router-link to="/"
         ><HomeIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
@@ -70,9 +70,3 @@ import {
   QuestionMarkCircleIcon,
 } from '@heroicons/vue/24/outline'
 </script>
-
-<style>
-nav a.router-link-exact-active {
-  color: #881337;
-}
-</style>

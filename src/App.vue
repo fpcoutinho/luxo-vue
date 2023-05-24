@@ -16,16 +16,3 @@ export default {
   },
 }
 </script>
-
-<style>
-main {
-  margin-bottom: auto;
-  padding-top: 80px;
-  height: 100%;
-}
-
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
