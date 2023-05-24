@@ -13,8 +13,16 @@
         <div class="password error"></div>
       </form-group>
       <form-group>
-        <button type="submit">Log in</button>
-        <p>Não tem uma conta? <a href="/auth/signup">Cadastre-se</a></p>
+        <button
+          class="bg-primary-500 text-primary-100 hover:bg-primary-400"
+          type="submit"
+        >
+          Log in
+        </button>
+        <p>
+          Não tem uma conta?
+          <router-link to="/signup">Cadastre-se</router-link>
+        </p>
       </form-group>
     </form>
   </main>
@@ -128,8 +136,6 @@ label {
 button {
   margin-top: 30px;
   border-radius: 36px;
-  background-color: var(--h);
-  color: var(--bg);
   border: 0;
   text-transform: uppercase;
   font-weight: 700;
@@ -143,10 +149,6 @@ button {
   margin: 10px 2px;
   font-size: 0.8em;
   font-weight: bold;
-}
-
-form-group button:hover {
-  background-color: var(--h-hover);
 }
 
 @media screen and (min-width: 768px) {

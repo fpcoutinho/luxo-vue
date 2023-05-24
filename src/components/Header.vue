@@ -26,7 +26,7 @@
         </HeartIcon
       ></router-link>
 
-      <router-link to="#"
+      <router-link to="/login"
         ><UserIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
