@@ -1,116 +1,84 @@
 <template>
-  <div class="catalogo">
-    <section id="perfumes">
-      <h2>Perfumes</h2>
-      <ul class="lista-perfumes">
-        <!--<li v-for="produto in produtos">
-          <img :src="produto.imagem" alt="Perfume" />
-          <p>R$ {{ produto.preco }},00</p>
-        </li>-->
-      </ul>
-    </section>
+  <div class="bg-secondary-100 flex-1 ml-48">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h2 class="text-2xl font-bold tracking-tight text-gray-900">Perfumes</h2>
+
+      <div
+        class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+      >
+        <div
+          v-for="product in products"
+          :key="product.id"
+          class="group relative"
+        >
+          <div
+            class="aspect-h-1 aspect-w-1 w-full rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
+          >
+            <img
+              :src="product.imageSrc"
+              :alt="product.imageAlt"
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+            />
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-sm text-gray-700">
+                <a :href="product.href">
+                  <span aria-hidden="true" class="absolute inset-0" />
+                  {{ product.name }}
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+            </div>
+            <p class="text-sm font-medium text-gray-900">{{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Catalogo',
-  components: {},
-}
+<script setup>
+const products = [
+  {
+    id: 1,
+    name: 'Earthen Bottle',
+    href: '#',
+    price: '$48',
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
+    imageAlt:
+      'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
+  },
+  {
+    id: 2,
+    name: 'Nomad Tumbler',
+    href: '#',
+    price: '$35',
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
+    imageAlt:
+      'Olive drab green insulated bottle with flared screw lid and flat top.',
+  },
+  {
+    id: 3,
+    name: 'Focus Paper Refill',
+    href: '#',
+    price: '$89',
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
+    imageAlt:
+      'Person using a pen to cross a task off a productivity paper card.',
+  },
+  {
+    id: 4,
+    name: 'Machined Mechanical Pencil',
+    href: '#',
+    price: '$35',
+    imageSrc:
+      'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
+    imageAlt:
+      'Hand holding black machined steel mechanical pencil with brass tip and top.',
+  },
+]
 </script>
-
-<style scoped>
-.catalogo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  margin-right: 1rem;
-  gap: 1rem;
-}
-
-section {
-  width: 100%;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-}
-
-section ul {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0 10px;
-  overflow: auto;
-  gap: 1rem;
-  padding-bottom: 1rem;
-}
-
-section ul li {
-  list-style-type: none;
-  transition: 0.2s;
-}
-
-section ul li:hover {
-  background-color: #fff;
-  box-shadow: 0px 6px 16px 0px rgb(0 0 0 / 40%);
-}
-
-section li a,
-section li a:hover {
-  text-decoration: none;
-  color: #000;
-}
-
-section h2 {
-  margin-left: 1rem;
-  font-size: 1.7rem;
-  color: var(--h);
-}
-
-section {
-  background-color: var(--rosa);
-}
-
-section li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 0px 5px 0px !important;
-  margin-block: 0;
-  margin-inline: 0;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  gap: 0.5rem;
-}
-
-section li img {
-  width: 7rem;
-  height: auto;
-  border-radius: 8px;
-}
-
-section li p {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0;
-  text-align: center;
-}
-
-.botao-mais-produtos {
-  border-radius: 8px;
-  border: none;
-  padding: 5px 10px;
-  font-size: small;
-  width: fit-content;
-  color: #fff;
-  background-image: url('../../public/img/background-color-rose.png');
-  align-self: flex-end;
-  margin: 0px 10px 10px 0px;
-}
-</style>

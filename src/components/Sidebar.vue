@@ -1,14 +1,38 @@
 <template>
-  <nav class="sidebar">
-    <h2>Categorias</h2>
-    <ul>
-      <li><a href="#">Perfumes</a></li>
-      <li><a href="#">Maquiagens</a></li>
-      <li><a href="#">Cabelos</a></li>
-      <li><a href="#">Pele</a></li>
-      <li><a href="#">Cuidados</a></li>
+  <aside
+    class="sidebar fixed left-0 h-full w-48 text-primary-100 bg-primary-500 rounded-tr-lg py-4 box-border"
+  >
+    <h1 class="mt-0 mb-6">Categorias</h1>
+    <ul class="list-none p-0 mx-0">
+      <li
+        class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
+      >
+        <a href="#" class="w-full no-underline ease-in duration-500"
+          >Perfumes</a
+        >
+      </li>
+      <li
+        class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
+      >
+        <a href="#">Maquiagens</a>
+      </li>
+      <li
+        class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
+      >
+        <a href="#">Cabelos</a>
+      </li>
+      <li
+        class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
+      >
+        <a href="#">Pele</a>
+      </li>
+      <li
+        class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
+      >
+        <a href="#">Cuidados</a>
+      </li>
     </ul>
-  </nav>
+  </aside>
 </template>
 
 <script>
@@ -17,47 +41,3 @@ export default {
   components: {},
 }
 </script>
-
-<style>
-.sidebar {
-  width: 200px;
-  height: 100%;
-  background-color: crimson;
-  border-radius: 0 8px 8px 0;
-  padding: 20px 10px;
-  box-sizing: border-box;
-  color: #fff;
-}
-
-.sidebar h2 {
-  margin-top: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.sidebar ul li {
-  background-color: #ffc6c6;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-  color: #fff;
-  border-radius: 8px;
-}
-
-.sidebar ul li a {
-  display: block;
-  width: 100%;
-  text-decoration: none;
-  color: var(--h);
-  transition: 0.6s ease-in;
-}
-
-.sidebar ul li:hover {
-  transition: 0.3s ease-in;
-  box-shadow: 0px 6px 16px 0px rgb(0 0 0 / 40%);
-  opacity: 0.8;
-}
-</style>

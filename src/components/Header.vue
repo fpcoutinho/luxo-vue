@@ -1,103 +1,78 @@
 <template>
-  <header>
-    <div class="img-header">
+  <header
+    class="fixed top-0 left-0 h-16 w-full z-50 flex gap-10 shadow-sm shadow-primary-500 bg-white px-4 py-0"
+  >
+    <div class="img-header flex-1">
       <router-link to="/">
-        <img src="../assets/logo.png" alt="Logo" width="228.172px" />
+        <img
+          src="../assets/logo.png"
+          alt="Logo"
+          class="h-full w-auto rounded-md"
+        />
       </router-link>
     </div>
-
-    <nav class="nav-header">
+    <nav class="nav-header flex-3 h-full flex items-center gap-4 p-0">
       <router-link to="#"
-        ><i class="material-symbols-outlined"> shopping_cart </i></router-link
-      >
-
-      <router-link to="#"
-        ><i class="material-symbols-outlined"> person </i></router-link
-      >
+        ><HomeIcon
+          class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
+        >
+        </HomeIcon
+      ></router-link>
 
       <router-link to="#"
-        ><i class="material-symbols-outlined"> favorite </i></router-link
-      >
+        ><HeartIcon
+          class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
+        >
+        </HeartIcon
+      ></router-link>
+
+      <router-link to="#"
+        ><UserIcon
+          class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
+        >
+        </UserIcon
+      ></router-link>
 
       <router-link to="about"
-        ><i class="material-symbols-outlined"> info </i></router-link
-      >
+        ><InformationCircleIcon
+          class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
+        >
+        </InformationCircleIcon
+      ></router-link>
 
       <router-link to="#"
-        ><i class="material-symbols-outlined"> help </i></router-link
+        ><QuestionMarkCircleIcon
+          class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
+        >
+          help
+        </QuestionMarkCircleIcon></router-link
+      >
+    </nav>
+    <nav class="nav-header flex-3 h-full flex items-center gap-4 p-0">
+      <router-link to="#" class="no-underline text-sm"
+        ><ShoppingBagIcon
+          class="w-5 h-auto opacity-80 text-primary-300 hover:scale-110 ease-in duration-500"
+        >
+          shopping_cart
+        </ShoppingBagIcon></router-link
       >
     </nav>
   </header>
 </template>
 
-<script>
-export default {
-  name: 'Header',
-  data() {
-    return {}
-  },
-  methods: {},
-}
+<script setup>
+import {
+  HomeIcon,
+  UserIcon,
+  HeartIcon,
+  ShoppingBagIcon,
+  InformationCircleIcon,
+  QuestionMarkCircleIcon,
+} from '@heroicons/vue/24/outline'
 </script>
 
 <style>
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999px;
-  display: flex;
-  margin-bottom: 20px;
-  justify-content: center;
-  box-shadow: 0px 6px 16px 0px rgb(0 0 0 / 40%);
-  height: 50px;
-  background-color: crimson;
-  padding: 10px 0px;
-}
-
-header .img-header img {
-  height: 100%;
-  width: auto;
-  border-radius: 50%;
-}
-
-header .nav-header {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin-right: 20px;
-  padding: 0px;
-}
-
-header .nav-header a {
-  color: #000;
-  text-decoration: none;
-  font-size: small;
-  padding: 0px 10px;
-}
-
-header .nav-header a i {
-  height: 20px;
-  width: auto;
-  opacity: 0.8;
-  color: #fff;
-}
-
-header .nav-header a i:hover {
-  transform: scale(1.2);
-  transition: 0.6s ease-in;
-  opacity: 0.8;
-}
-
-.logo img {
-  width: 50px;
-}
-
 nav a.router-link-exact-active {
-  color: #a71427;
+  color: #881337;
 }
 </style>
