@@ -12,35 +12,35 @@
       </router-link>
     </div>
     <nav class="nav-header flex-3 h-full flex items-center gap-4 p-0">
-      <router-link to="/"
+      <router-link to="/" title="Início"
         ><HomeIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
         </HomeIcon
       ></router-link>
 
-      <router-link to="#"
+      <router-link to="#" title="Favoritos"
         ><HeartIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
         </HeartIcon
       ></router-link>
 
-      <router-link to="/login"
+      <router-link to="/login" title="Log in"
         ><UserIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
         </UserIcon
       ></router-link>
 
-      <router-link to="about"
+      <router-link to="about" title="Sobre"
         ><InformationCircleIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
         </InformationCircleIcon
       ></router-link>
 
-      <router-link to="#"
+      <router-link to="#" title="Ajuda"
         ><QuestionMarkCircleIcon
           class="w-5 h-auto opacity-80 text-primary-500 hover:scale-110 ease-in duration-500"
         >
@@ -49,13 +49,17 @@
       >
     </nav>
     <nav class="nav-header flex-3 h-full flex items-center gap-4 p-0">
-      <router-link to="#" class="no-underline text-sm"
-        ><ShoppingBagIcon
+      <button
+        type="button"
+        title="Sacola de Compras"
+        class="no-underline text-sm"
+      >
+        <ShoppingBagIcon
           class="w-5 h-auto opacity-80 text-primary-300 hover:scale-110 ease-in duration-500"
         >
           shopping_cart
-        </ShoppingBagIcon></router-link
-      >
+        </ShoppingBagIcon>
+      </button>
     </nav>
   </header>
 </template>
