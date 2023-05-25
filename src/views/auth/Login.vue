@@ -5,12 +5,12 @@
       <div class="form-group">
         <label for="email">Email</label>
         <input type="text" name="email" />
-        <div class="email error"></div>
+        <div class="email error">{{ emailError }}</div>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" name="password" />
-        <div class="password error"></div>
+        <div class="password error">{{ passwordError }}</div>
       </div>
       <div class="form-group">
         <button
@@ -28,46 +28,42 @@
   </main>
 </template>
 
-<script>
-export default {
-  name: 'Login',
-  data() {
-    return {
-      email: '',
-      password: '',
+<script setup>
+import { ref } from 'vue'
+
+const emailError = ref('')
+const passwordError = ref('')
+
+const login = async (e) => {
+  e.preventDefault()
+  console.log(e)
+  const form = e.target
+  // reset errors
+  emailError.value = ''
+  passwordError.value = ''
+  // get values
+  const email = form.email.value
+  const password = form.password.value
+
+  try {
+    const res = await fetch('/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+    const data = await res.json()
+    console.log(data)
+    if (data.errors) {
+      emailError.value = data.errors.email
+      passwordError.value = data.errors.password
     }
-  },
-  methods: {
-    async login(e) {
-      e.preventDefault()
-
-      // reset errors
-      emailError.textContent = ''
-      passwordError.textContent = ''
-
-      // get values
-      const email = form.email.value
-      const password = form.password.value
-
-      try {
-        const res = await fetch('/auth/login', {
-          method: 'POST',
-          body: JSON.stringify({ email, password }),
-          headers: { 'Content-Type': 'application/json' },
-        })
-        const data = await res.json()
-        if (data.errors) {
-          emailError.textContent = data.errors.email
-          passwordError.textContent = data.errors.password
-        }
-        if (data.user) {
-          location.assign('/')
-        }
-      } catch (err) {
-        console.log(err)
-      }
-    },
-  },
+    if (data.user) {
+      localStorage.setItem('user', JSON.stringify(data.user))
+      location.assign('/')
+    }
+  } catch (err) {
+    console.log(err)
+  }
 }
 </script>
 

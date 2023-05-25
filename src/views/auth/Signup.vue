@@ -7,25 +7,25 @@
       <div class="form-group">
         <label for="name">Nome</label>
         <input type="text" id="name" name="name" required />
-        <div class="name error"></div>
+        <div class="name error">{{ nameError }}</div>
         <label for="surname">Sobrenome</label>
         <input type="text" id="surname" name="surname" required />
-        <div class="surname error"></div>
+        <div class="surname error">{{ surnameError }}</div>
       </div>
       <div class="form-group">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required />
-        <div class="email error"></div>
+        <div class="email error">{{ emailError }}</div>
       </div>
       <div class="form-group">
         <label for="dataNascimento">Data de Nascimento</label>
         <input type="date" id="dataNascimento" name="dataNascimento" required />
-        <div class="dataNascimento error"></div>
+        <div class="dataNascimento error">{{ dataNascimentoError }}</div>
       </div>
       <div class="form-group">
         <label for="password">Senha</label>
         <input type="password" id="password" name="password" required />
-        <div class="password error"></div>
+        <div class="password error">{{ passwordError }}</div>
       </div>
       <div class="form-group">
         <label for="confirmPassword">Confirmar Senha</label>
@@ -35,7 +35,7 @@
           name="confirmPassword"
           required
         />
-        <div class="confirmPassword error"></div>
+        <div class="confirmPassword error">{{ confirmPasswordError }}</div>
       </div>
       <div class="form-group">
         <button
@@ -49,64 +49,67 @@
   </main>
 </template>
 
-<script>
-export default {
-  name: 'Signup',
-  data() {
-    return {
-      name: '',
-      surname: '',
-      email: '',
-      dataNascimento: '',
-      password: '',
-      confirmPassword: '',
+<script setup>
+import { ref } from 'vue'
+
+const nameError = ref('')
+const surnameError = ref('')
+const emailError = ref('')
+const dataNascimentoError = ref('')
+const passwordError = ref('')
+const confirmPasswordError = ref('')
+
+const signup = async (e) => {
+  e.preventDefault()
+  const form = e.target
+  // reset errors
+  nameError.value = ''
+  surnameError.value = ''
+  emailError.value = ''
+  dataNascimentoError.value = ''
+  passwordError.value = ''
+
+  // get values
+  const name = form.name.value
+  const surname = form.surname.value
+  const email = form.email.value
+  const dataNascimento = form.dataNascimento.value
+  const password = form.password.value
+  const confirmPassword = form.confirmPassword.value
+
+  try {
+    const res = await fetch('/auth/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        surname,
+        email,
+        dataNascimento,
+        password,
+        confirmPassword,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+    const data = await res.json()
+
+    if (data.errors) {
+      nameError.value = data.errors.name
+      surnameError.value = data.errors.surname
+      emailError.value = data.errors.email
+      dataNascimentoError.value = data.errors.dataNascimento
+      passwordError.value = data.errors.password
+      confirmPasswordError.value = data.errors.confirmPassword
     }
-  },
-  methods: {
-    async signup(e) {
-      e.preventDefault()
-      const name = form.name.value
-      const surname = form.surname.value
-      const email = form.email.value
-      const dataNascimento = form.dataNascimento.value
-      const password = form.password.value
-      const confirmPassword = form.confirmPassword.value
-
-      try {
-        const res = await fetch('/auth/signup', {
-          method: 'POST',
-          body: JSON.stringify({
-            name,
-            surname,
-            email,
-            dataNascimento,
-            password,
-            confirmPassword,
-          }),
-          headers: { 'Content-Type': 'application/json' },
-        })
-        const data = await res.json()
-
-        if (data.errors) {
-          nameError.textContent = data.errors.name
-          surnameError.textContent = data.errors.surname
-          emailError.textContent = data.errors.email
-          dataNascimentoError.textContent = data.errors.dataNascimento
-          passwordError.textContent = data.errors.password
-          confirmPasswordError.textContent = data.errors.confirmPassword
-        }
-        if (password !== confirmPassword) {
-          document.querySelector('.confirmPassword.error').textContent =
-            'As senhas não coincidem.'
-        }
-        if (data.user) {
-          location.assign('/')
-        }
-      } catch (err) {
-        console.log(err)
-      }
-    },
-  },
+    if (password !== confirmPassword) {
+      confirmPasswordError.value = 'As senhas não coincidem.'
+    }
+    if (data.user) {
+      localStorage.setItem('user', JSON.stringify(data.user))
+      location.assign('/')
+    }
+  } catch (err) {
+    console.log(err)
+  }
 }
 </script>
 
