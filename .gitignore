@@ -3,6 +3,7 @@ node_modules
 /dist
 /oldviews
 .hintrc
+/public/img/produtos
 
 # local env files
 .env.local
