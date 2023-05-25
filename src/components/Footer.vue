@@ -1,7 +1,5 @@
 <template>
-  <footer
-    class="w-full absolute bottom-0 right-0 hidden lg:flex items-center justify-end"
-  >
+  <footer class="w-full hidden lg:flex items-center justify-end">
     <div class="p-2 flex gap-4">
       <a
         href="#"

@@ -1,12 +1,6 @@
 <template>
   <main>
     <div id="sobre-header">
-      <a href="/home"
-        ><img
-          src="../assets/logo.png"
-          alt="Logo da Luxo Cosmeticos"
-          width="300"
-      /></a>
       <nav>
         <ul class="lista-horizontal">
           <li class="item-horizontal"><a href="#sobre">História</a></li>
@@ -18,52 +12,51 @@
     <section id="sobre">
       <h2>Nossa história</h2>
       <p>
-        Há alguns anos, Maria sempre foi apaixonada por beleza e cuidados
+        Há alguns anos, Juliana sempre foi apaixonada por beleza e cuidados
         pessoais. Ela tinha um sonho de criar sua própria linha de cosméticos,
         mas sabia que o mercado já estava saturado de marcas e produtos.
       </p>
       <p>
-        Foi então que Maria teve uma ideia: em vez de criar uma nova linha de
+        Foi então que Juliana teve uma ideia: em vez de criar uma nova linha de
         cosméticos, por que não criar uma loja que vendesse as melhores marcas
         de cosméticos do mundo em um só lugar? Ela queria que sua loja fosse
         conhecida por oferecer a experiência de compra mais luxuosa e exclusiva
         para seus clientes.
       </p>
       <p>
-        Com essa ideia em mente, Maria começou a trabalhar duro em seu plano de
-        negócios e pesquisa de mercado. Ela pesquisou as marcas mais populares
-        de cosméticos, fez uma lista dos produtos mais vendidos e procurou por
-        tendências de beleza que estavam em alta.
+        Com essa ideia em mente, Juliana começou a trabalhar duro em seu plano
+        de negócios e pesquisa de mercado. Ela pesquisou as marcas mais
+        populares de cosméticos, fez uma lista dos produtos mais vendidos e
+        procurou por tendências de beleza que estavam em alta.
       </p>
       <p>
-        Depois de muita pesquisa e trabalho duro, Maria finalmente lançou a
+        Depois de muita pesquisa e trabalho duro, Juliana finalmente lançou a
         "Luxo Cosméticos", sua loja de varejo de cosméticos exclusivos e
         luxuosos. Ela começou a negociar com fornecedores e fabricantes para
         oferecer os melhores produtos do mercado em um só lugar.
       </p>
       <p>
-        Maria queria que a experiência de compra na Luxo Cosméticos fosse única
-        e luxuosa, então ela criou uma loja elegante e sofisticada que oferecia
-        um serviço de atendimento ao cliente excepcional. Os clientes eram
-        recebidos com bebidas e petiscos enquanto exploravam os corredores
+        Juliana queria que a experiência de compra na Luxo Cosméticos fosse
+        única e luxuosa, então ela criou uma loja elegante e sofisticada que
+        oferecia um serviço de atendimento ao cliente excepcional. Os clientes
+        eram recebidos com bebidas e petiscos enquanto exploravam os corredores
         repletos de produtos exclusivos e luxuosos.
       </p>
       <p>
         Com o passar do tempo, a Luxo Cosméticos se tornou uma das lojas de
         cosméticos mais populares e bem-sucedidas da cidade, atraindo uma
-        clientela fiel e exigente. Maria estava orgulhosa de sua criação e
+        clientela fiel e exigente. Juliana estava orgulhosa de sua criação e
         continuou a inovar e oferecer os melhores produtos e serviços para seus
         clientes, mantendo a qualidade e a exclusividade da marca.
       </p>
 
-      <div id="imagem-maria">
+      <div id="imagem-juliana">
         <figure>
           <img
-            src="../../public/img/maria.png"
+            src="../../public/img/dona.jpg"
             alt="Fota da desenvolvedora da Luxo Cosméticos"
-            width="500"
           />
-          <figcaption>Maria, fundadora da Luxo Cosméticos</figcaption>
+          <figcaption>Juliana, fundadora da Luxo Cosméticos</figcaption>
         </figure>
       </div>
     </section>
@@ -154,8 +147,8 @@ figcaption {
   text-align: center;
 }
 
-#imagem-maria {
-  width: 500px;
+#imagem-juliana {
+  width: 300px;
   margin: auto;
 }
 
@@ -165,7 +158,6 @@ figcaption {
 }
 
 #sobre-header {
-  background-image: url('../../public/img/background-color-rose.png');
   padding: 9px;
   margin-top: 25px;
   text-align: center;
@@ -180,7 +172,7 @@ figcaption {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #800020;
+  background-color: #f43f5e;
 }
 
 li {
@@ -200,6 +192,6 @@ li {
 }
 
 .item-horizontal a:hover {
-  background-color: #111111;
+  background-color: #e11d48;
 }
 </style>

@@ -5,7 +5,7 @@
     <div class="img-header flex-1">
       <router-link to="/">
         <img
-          src="../assets/logo.png"
+          src="../../public/img/logo-strong.png"
           alt="Logo"
           class="h-full w-auto rounded-md"
         />
