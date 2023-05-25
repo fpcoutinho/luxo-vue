@@ -12,7 +12,7 @@
           class="group relative"
         >
           <div
-            class="aspect-h-1 aspect-w-1 w-full rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80"
+            class="aspect-h-1 aspect-w-1 w-full rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75"
           >
             <img
               :src="product.imagem"

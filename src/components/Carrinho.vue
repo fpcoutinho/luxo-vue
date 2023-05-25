@@ -33,14 +33,18 @@
               leave-from="translate-x-0"
               leave-to="translate-x-full"
             >
-              <DialogPanel class="pointer-events-auto w-screen max-w-md">
+              <DialogPanel
+                class="pointer-events-auto w-screen max-w-md no-scroll"
+              >
                 <div
-                  class="flex pt-20 h-full flex-col overflow-y-auto bg-white shadow-xl -z-10"
+                  class="flex pt-20 h-full flex-col overflow-y-auto no-scrollbar bg-white shadow-xl -z-10"
                 >
-                  <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                  <div
+                    class="flex-1 overflow-y-auto no-scrollbar px-4 py-6 sm:px-6"
+                  >
                     <div class="flex items-start justify-between">
                       <DialogTitle class="text-lg font-medium text-gray-900"
-                        >Shopping cart</DialogTitle
+                        >Minha Sacola de Compras</DialogTitle
                       >
                       <div class="ml-3 flex h-7 items-center">
                         <button
@@ -82,7 +86,7 @@
                                       product.name
                                     }}</a>
                                   </h3>
-                                  <p class="ml-4">{{ product.price }}</p>
+                                  <p class="ml-4">R$ {{ product.price }}.00</p>
                                 </div>
                                 <p class="mt-1 text-sm text-gray-500">
                                   {{ product.color }}
@@ -98,9 +102,9 @@
                                 <div class="flex">
                                   <button
                                     type="button"
-                                    class="font-medium text-indigo-600 hover:text-indigo-500"
+                                    class="font-medium text-primary-600 hover:text-primary-500"
                                   >
-                                    Remove
+                                    Remover
                                   </button>
                                 </div>
                               </div>
@@ -116,29 +120,29 @@
                       class="flex justify-between text-base font-medium text-gray-900"
                     >
                       <p>Subtotal</p>
-                      <p>$262.00</p>
+                      <p>R$909.00</p>
                     </div>
                     <p class="mt-0.5 text-sm text-gray-500">
-                      Shipping and taxes calculated at checkout.
+                      Prossiga para calcular frete e prazo de entrega.
                     </p>
                     <div class="mt-6">
                       <a
                         href="#"
-                        class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                        >Checkout</a
+                        class="flex items-center justify-center rounded-md border border-transparent bg-primary-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary-700"
+                        >Fechar Pedido</a
                       >
                     </div>
                     <div
                       class="mt-6 flex justify-center text-center text-sm text-gray-500"
                     >
                       <p>
-                        or
+                        ou
                         <button
                           type="button"
-                          class="font-medium text-indigo-600 hover:text-indigo-500"
+                          class="font-medium text-primary-600 hover:text-primary-500"
                           @click="$emit('closeCarrinho')"
                         >
-                          Continue Shopping
+                          Continue Comprando
                           <span aria-hidden="true"> &rarr;</span>
                         </button>
                       </p>
@@ -175,28 +179,36 @@ defineEmits(['closeCarrinho'])
 const products = [
   {
     id: 1,
-    name: 'Throwback Hip Bag',
+    name: 'Perfume Acqua di Gio Profondo',
     href: '#',
-    color: 'Salmon',
-    price: '$90.00',
+    color: 'Armani',
+    price: '649',
     quantity: 1,
     imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+      'https://luxo-cosmeticos.s3.us-west-2.amazonaws.com/e859d6945cb297dd09ea58e2a4a0f32c',
+    imageAlt: 'The best cologne in the world.',
   },
   {
     id: 2,
-    name: 'Medium Stuff Satchel',
+    name: 'Kit Inoar Vitamina C',
     href: '#',
-    color: 'Blue',
-    price: '$32.00',
+    color: 'Inoar',
+    price: '60',
     quantity: 1,
     imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-    imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
+      'https://luxo-cosmeticos.s3.us-west-2.amazonaws.com/ae3bf865500983bd445fc68cc95871c0',
+    imageAlt: 'Low poo e vegano!!',
   },
-  // More products...
+  {
+    id: 3,
+    name: 'Base da Virgínia',
+    href: '#',
+    color: 'Sai com água',
+    price: '200',
+    quantity: 1,
+    imageSrc:
+      'https://luxo-cosmeticos.s3.us-west-2.amazonaws.com/5561532ac941b046353a396517663fee',
+    imageAlt: 'Sai até com suor...',
+  },
 ]
 </script>

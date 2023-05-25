@@ -18,7 +18,7 @@
           class="rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
           >Voltar para o início</router-link
         >
-        <router-link to="#" class="text-sm font-semibold text-gray-900"
+        <router-link to="help" class="text-sm font-semibold text-gray-900"
           >Mais informações<span aria-hidden="true">&rarr;</span></router-link
         >
       </div>
