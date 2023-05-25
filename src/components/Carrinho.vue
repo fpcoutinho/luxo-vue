@@ -1,6 +1,10 @@
 <template>
-  <TransitionRoot as="template" :show="open">
-    <Dialog as="div" class="relative z-10" @close="open = false">
+  <TransitionRoot as="template" :show="openCarrinho">
+    <Dialog
+      as="div"
+      class="relative z-10 mt-20"
+      @close="$emit('closeCarrinho')"
+    >
       <TransitionChild
         as="template"
         enter="ease-in-out duration-500"
@@ -31,7 +35,7 @@
             >
               <DialogPanel class="pointer-events-auto w-screen max-w-md">
                 <div
-                  class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl"
+                  class="flex pt-20 h-full flex-col overflow-y-auto bg-white shadow-xl -z-10"
                 >
                   <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                     <div class="flex items-start justify-between">
@@ -42,7 +46,7 @@
                         <button
                           type="button"
                           class="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                          @click="open = false"
+                          @click="$emit('closeCarrinho')"
                         >
                           <span class="sr-only">Close panel</span>
                           <XMarkIcon class="h-6 w-6" aria-hidden="true" />
@@ -132,7 +136,7 @@
                         <button
                           type="button"
                           class="font-medium text-indigo-600 hover:text-indigo-500"
-                          @click="open = false"
+                          @click="$emit('closeCarrinho')"
                         >
                           Continue Shopping
                           <span aria-hidden="true"> &rarr;</span>
@@ -151,7 +155,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import {
   Dialog,
   DialogPanel,
@@ -160,6 +163,14 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 import { XMarkIcon } from '@heroicons/vue/24/outline'
+
+defineProps({
+  openCarrinho: {
+    type: Boolean,
+    default: false,
+  },
+})
+defineEmits(['closeCarrinho'])
 
 const products = [
   {
@@ -188,6 +199,4 @@ const products = [
   },
   // More products...
 ]
-
-const open = ref(true)
 </script>

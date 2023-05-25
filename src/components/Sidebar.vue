@@ -7,37 +7,46 @@
       <li
         class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
       >
-        <a href="#" class="w-full no-underline ease-in duration-500"
-          >Perfumes</a
+        <button
+          type="button"
+          @click="$emit('categoriaAtual', 'Perfume')"
+          class="w-full no-underline ease-in duration-500"
         >
+          Perfumes
+        </button>
       </li>
       <li
         class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
       >
-        <a href="#">Maquiagens</a>
+        <button type="button" @click="$emit('categoriaAtual', 'Maquiagem')">
+          Maquiagens
+        </button>
       </li>
       <li
         class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
       >
-        <a href="#">Cabelos</a>
+        <button type="button" @click="$emit('categoriaAtual', 'Cabelo')">
+          Cabelos
+        </button>
       </li>
       <li
         class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
       >
-        <a href="#">Pele</a>
+        <button type="button" @click="$emit('categoriaAtual', 'Pele')">
+          Pele
+        </button>
       </li>
       <li
         class="py-2 px-3 hover:ease-in hover:duration-300 hover:shadow-md hover:opacity-80"
       >
-        <a href="#">Cuidados</a>
+        <button type="button" @click="$emit('categoriaAtual', 'Cuidados')">
+          Cuidados
+        </button>
       </li>
     </ul>
   </aside>
 </template>
 
-<script>
-export default {
-  name: 'Sidebar',
-  components: {},
-}
+<script setup>
+defineEmits(['categoriaAtual'])
 </script>

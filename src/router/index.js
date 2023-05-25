@@ -14,6 +14,7 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+    props: true,
   },
   {
     path: '/about',
@@ -44,6 +45,7 @@ const routes = [
     path: '/produto/:id',
     name: 'produto',
     component: Produto,
+    props: true,
   },
   {
     path: '/admin/cria/produto',

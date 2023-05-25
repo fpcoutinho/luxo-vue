@@ -1,7 +1,7 @@
 <template>
   <div class="bg-secondary-100 flex-1 ml-48">
     <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-      <h2 class="text-2xl font-bold tracking-tight text-gray-900">Perfumes</h2>
+      <h2 class="text-2xl tracking-tight text-gray-400">{{ categoria }}s</h2>
 
       <div
         class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
@@ -43,24 +43,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import axios from 'axios'
-
-const products = ref([])
-const error = ref(null)
-
-const load = async (categoria) => {
-  const url = '/produtos/categoria/' + categoria
-  try {
-    let data = await axios.get(url)
-    if (!data.status === 200) {
-      throw new Error('Erro ao carregar os dados')
-    }
-    products.value = data.data
-  } catch (err) {
-    error.value = err.message
-  }
-}
-
-load('Perfume')
+defineProps({
+  categoria: {
+    type: String,
+    default: 'Perfume',
+  },
+  products: {
+    type: Array,
+    default: () => [],
+  },
+})
 </script>

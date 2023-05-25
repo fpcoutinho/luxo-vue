@@ -53,6 +53,7 @@
         type="button"
         title="Sacola de Compras"
         class="no-underline text-sm"
+        @click="toggleCarrinho"
       >
         <ShoppingBagIcon
           class="w-5 h-auto opacity-80 text-primary-300 hover:scale-110 ease-in duration-500"
@@ -62,9 +63,10 @@
       </button>
     </nav>
   </header>
+  <Carrinho :openCarrinho="openCarrinho" @closeCarrinho="toggleCarrinho" />
 </template>
 
-<script setup>
+<script>
 import {
   HomeIcon,
   UserIcon,
@@ -73,4 +75,28 @@ import {
   InformationCircleIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/vue/24/outline'
+import { ref } from 'vue'
+import Carrinho from './Carrinho.vue'
+export default {
+  name: 'Header',
+  components: {
+    HomeIcon,
+    UserIcon,
+    HeartIcon,
+    ShoppingBagIcon,
+    InformationCircleIcon,
+    QuestionMarkCircleIcon,
+    Carrinho,
+  },
+  setup() {
+    const openCarrinho = ref(false)
+    const toggleCarrinho = () => {
+      openCarrinho.value = !openCarrinho.value
+    }
+    return {
+      toggleCarrinho,
+      openCarrinho,
+    }
+  },
+}
 </script>
